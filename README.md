@@ -1,4 +1,4 @@
-# SitePiscineRennes
+# piscines
 Projet web de BTS SIO 2e année
 Site Web pour les piscines de Rennes afin de gérer les abonnements des utilisateurs
 
