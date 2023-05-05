@@ -1,13 +1,13 @@
 <?php
-    require_once('controllers/c_HomePage.php');
-    
-    $title = "Piscines municipales de Rennes - Accueil";
-    ob_start();
-    $ControllerHomePage = new HomePage;
+require_once('controllers/c_HomePage.php');
+
+$title = "Piscines municipales de Rennes - Accueil";
+ob_start();
+$ControllerHomePage = new HomePage;
 ?>
 
 <main>
-    <img class="banner" src="view\img\bannerRennes.webp" alt="">
+    <img class="banner" src="view\img\bannerPool.jpg" alt="">
 
     <div class="SelectSwimmingPool">
         <div class="line"></div>
@@ -27,7 +27,7 @@
             </div>
             <?php $ControllerHomePage->printMap() ?>
         </div>
-      <a class="blueLink" href="/index.php?action=achat"  >Voir les offres</a>
+        <a class="blueLink" href="/index.php?action=achat">Voir les offres</a>
     </div>
 </main>
 
