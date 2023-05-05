@@ -9,14 +9,12 @@
 </head>
 
 <body>
-    <!-- Je remets le header ici pour l'instant mais à revoir -->
     <header>
         <nav>
             <a class=a-nostyle href="/index.php?action=accueil"><img src="view/img/logo.jpeg" alt=""></a>
             <ul>
                 <li><a href="/index.php?action=accueil">Accueil</a></li>
                 <li><a href="/index.php?action=achat">Formules</a></li>
-                <li><a href="/index.php?action=admin">Gestion</a></li>
                 <li><a href="/index.php?action=panier">Panier</a></li>
                 <li><a class="blueLink" href="/index.php?action=verif">Mon Code</a></li>
             </ul>
@@ -24,6 +22,13 @@
     </header>
 
     <?= $content ?>
+
+    <footer>
+        <a class="a-nostyle white-font" href="/index.php?action=adminRedirection">Espace administrateur</a>
+        <a class="a-nostyle white-font">Conditions générales de vente</a>
+        <a class="a-nostyle white-font">Conditions générales d'utilisation</a>
+        <a class="a-nostyle white-font">Politique en matière de cookies</a>
+    </footer>
 </body>
 
 </html>

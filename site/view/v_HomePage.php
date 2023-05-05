@@ -1,12 +1,11 @@
 <?php
 require_once('controllers/c_HomePage.php');
-
 $title = "Piscines municipales de Rennes - Accueil";
 ob_start();
 $ControllerHomePage = new HomePage;
 ?>
 
-<main>
+<main id="mainHome">
     <img class="banner" src="view\img\bannerPool.jpg" alt="">
 
     <div class="SelectSwimmingPool">

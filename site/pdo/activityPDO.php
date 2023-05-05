@@ -21,28 +21,57 @@ class ActivityPDO
         return $activite;
     }
 
-    // Return all activities from database
-    public function readAll(): array
+    // Return all active activities which have offers
+    public function readAllActive(): array
     {
-        $MySQLQuery = 'SELECT * FROM activity WHERE active = 1';
+        $MySQLQuery = 'SELECT * FROM activity a
+        WHERE a.id_activity in (SELECT DISTINCT id_activity FROM offer) AND a.active = 1;';
         $stmt = DBConnection::getInstance()->prepare($MySQLQuery);
         $stmt->execute();
         return $this->returnActivities($stmt->fetchAll());
     }
 
-    // TODO Add new activity to database
-    public function create(): void
+    // Return all activities from database
+    public function readAll(): array
     {
+        $MySQLQuery = 'SELECT * FROM activity';
+        $stmt = DBConnection::getInstance()->prepare($MySQLQuery);
+        $stmt->execute();
+        return $this->returnActivities($stmt->fetchAll());
     }
 
-    // TODO Update existing activity
-    public function update(): void
+    // Add new activity to database
+    public function create(Activity $activity): int
     {
+        $MySQLQuery = 'INSERT INTO activity (name, description, booking, active)
+        VALUES (?, ?, ?, ?)';
+        $stmt = DBConnection::getInstance()->prepare($MySQLQuery);
+        $stmt->execute([
+            $activity->getName(),
+            $activity->getDescription(),
+            $activity->getBooking(),
+            $activity->getActive()
+        ]);
+        return DBConnection::getInstance()->lastInsertId();
     }
 
-    // TODO Delete activity from database
-    public function delete(): void
+    // Update existing activity
+    public function update(Activity $activity): bool
     {
+        $res = false;
+        $MySQLQuery = 'UPDATE activity SET name=?, description=?, booking=?,
+        active=? WHERE id_activity=?';
+        $stmt = DBConnection::getInstance()->prepare($MySQLQuery);
+        if ($stmt->execute([
+            $activity->getName(),
+            $activity->getDescription(),
+            $activity->getBooking(),
+            $activity->getActive(),
+            $activity->getIdActivity()
+        ])) {
+            $res = true;
+        }
+        return $res;
     }
 
     // Return all activities in $rows and update $data
