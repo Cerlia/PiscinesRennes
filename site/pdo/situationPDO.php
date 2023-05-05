@@ -19,27 +19,51 @@ class SituationPDO
         return $situation;
     }
 
-    // Return all situations from database
-    public function getSituations(): array
+    // Return all active situations which have offers
+    public function getActiveSituations(): array
     {
-        $stmt = DBConnection::getInstance()->prepare('SELECT * FROM situation WHERE active = 1;');
+        $MySQLQuery = 'SELECT * FROM situation s
+        WHERE s.id_situation in (SELECT DISTINCT id_situation FROM offer) AND s.active = 1;';
+        $stmt = DBConnection::getInstance()->prepare($MySQLQuery);
         $stmt->execute();
         return $this->returnSituations($stmt->fetchAll());
     }
 
-    // TODO Add new situation to database
-    public function create(): void
+    // Return all situations from database
+    public function getSituations(): array
     {
+        $stmt = DBConnection::getInstance()->prepare('SELECT * FROM situation;');
+        $stmt->execute();
+        return $this->returnSituations($stmt->fetchAll());
     }
 
-    // TODO Update existing situation
-    public function update(): void
+    // Add new situation to database
+    public function create(Situation $situation): int
     {
+        $MySQLQuery = 'INSERT INTO situation (name, active)
+        VALUES (?, ?)';
+        $stmt = DBConnection::getInstance()->prepare($MySQLQuery);
+        $stmt->execute([
+            $situation->getName(),
+            $situation->getActive()
+        ]);
+        return DBConnection::getInstance()->lastInsertId();
     }
 
-    // TODO Delete situation from database
-    public function delete(): void
+    // Update existing situation
+    public function update(Situation $situation): bool
     {
+        $res = false;
+        $MySQLQuery = 'UPDATE situation SET name=?, active=? WHERE id_situation=?';
+        $stmt = DBConnection::getInstance()->prepare($MySQLQuery);
+        if ($stmt->execute([
+            $situation->getName(),
+            $situation->getActive(),
+            $situation->getIdSituation()
+        ])) {
+            $res = true;
+        }
+        return $res;
     }
 
     // Return all situations in $rows and update $data
