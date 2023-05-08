@@ -16,4 +16,4 @@ D'après ce cahier des charges ont été créés différentes pages permettant :
 -	de s'authentifier pour modifier les offres.
 
 # Installation
-Le site nécessite une base de données MySQL dont le script de resstauration se trouve dans le dépôt.
+Le site nécessite une base de données MySQL dont le script de restauration db_restore_pools.sql se trouve dans le dépôt.
