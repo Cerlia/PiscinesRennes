@@ -5,7 +5,9 @@
 
 <?php $ControllerAdminAddSituation = new AdminAddSituation ?>
 
+<main>
 <?php $ControllerAdminAddSituation->printAddSituationResult() ?>
+</main>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('view/layout.php') ?>

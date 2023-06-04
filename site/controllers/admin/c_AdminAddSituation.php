@@ -15,7 +15,7 @@ class AdminAddSituation
     {
         $situationPDO = new SituationPDO();
         if ($situationPDO->create($this->newSituation)) {
-            echo "<h1>Situation ajoutée</h1>";
+            echo '<p>La situation a été ajoutée</br><a href="index.php?action=adminRedirection&step=view">Retour</a></p></p>';
         } else {
             echo "<p>Echec de l'enregistrement</p>";
         }

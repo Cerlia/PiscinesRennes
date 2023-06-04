@@ -17,7 +17,7 @@ class HomePage {
     function printPools(){
         foreach ($this->pools as $pool) {
             echo '<div class="SwimmingPool--Pool">';
-            echo ' <img class="SwimmingPool--Img" src="' . $pool->getPicture() . '" value="' . $pool->getName() . '*' . $pool->getAddress() . '*' . $pool->getDescription() . '*' . $pool->getMap() . '" alt="" onclick="PiscineClickEvent(this)">';
+            echo '<img class="SwimmingPool--Img" src="' . $pool->getPicture() . '" value="' . $pool->getName() . '*' . $pool->getAddress() . '*' . $pool->getDescription() . '*' . $pool->getMap() . '" alt="" onclick="PiscineClickEvent(this)">';
             echo '<div class="SwimmingPool--Name">' . $pool->getName() . '</div>';
             echo '</div>';
         }

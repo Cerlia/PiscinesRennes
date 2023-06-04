@@ -17,7 +17,7 @@ class AdminUpdateActivityAction
             $updatedActivity = new Activity($name, $description, $booking, $active, $id_activity);
             $activityPDO = new ActivityPDO();
             if ($activityPDO->update($updatedActivity)) {
-                echo "L'activité a bien été modifiée.";
+                echo '<p>L\'activité a été modifiée</br><a href="index.php?action=adminRedirection&step=view">Retour</a></p>';
             } else {
                 echo "Une erreur est survenue lors de la modification de l'activité.";
             }

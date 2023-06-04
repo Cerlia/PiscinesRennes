@@ -45,7 +45,7 @@ class Reservation {
             $pool_name = $booking->getSession()->read()->getName();
             $coach = $booking->getSession()->getCoach();
             $day = date('d/m/Y', strtotime($booking->getSession()->getDateTime()));
-            $beginTime = date('h:i', strtotime($booking->getSession()->getDateTime()));
+            $beginTime = date('H:i', strtotime($booking->getSession()->getDateTime()));
 
             echo '<li>Le ' . $day . ' à ' . $beginTime . ' à ' . $pool_name . ' (coach : ' . $coach . ')</li>';
         }
@@ -61,7 +61,7 @@ class Reservation {
             $pool_name = $lesson->getPool()->getName();
             $coach = $lesson->getCoach();
             $day = date('d/m/Y', strtotime($lesson->getDateTime()));
-            $beginTime = date('h:i', strtotime($lesson->getDateTime()));
+            $beginTime = date('H:i', strtotime($lesson->getDateTime()));
             $bookingNb = $lesson->getBookingNb();
             $capacity = $lesson->getCapacity();
             $alreadyBooked = $lesson->alreadyBooked($this->code);

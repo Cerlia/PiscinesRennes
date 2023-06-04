@@ -10,7 +10,9 @@
     <div class="alignRight">
         <div class="dispColumn">
             <?php $ControllerAdmin->printInfoConnection(); ?>
-            <form method="post" action="index.php?action=adminRedirection&step=disconnect">
+            <form method="POST" action="index.php">
+                <input type="hidden" name="action" value="adminRedirection" >
+                <input type="hidden" name="step" value="disconnect" >
                 <input type="submit" value="Déconnexion">
             </form>
         </div>
@@ -31,7 +33,7 @@
                     <th>Réservation</th>
                     <th>Actif</th>
                     <th>Modifier</th>
-                    <th>Activer/</br>Désactiver</th>
+                    <th>Désactiver</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,7 +41,7 @@
             </tbody>
         </table>
         <h2>Ajouter une activité</h2>
-        <form method="post" action="index.php?action=adminRedirection&step=addActivity">
+        <form method="POST" action="index.php">
             <div class="colDiv">
                 <div class="vDiv divAlignRight">
                     <label for="activityname">* Nom de l'activité</label>
@@ -50,6 +52,8 @@
                     <input class="txtDescription" type="text" name="description" required>
                     <label class="lblChkbox"><input type="checkbox" name="booking" value="1">Réservation nécessaire</label>
                     <label class="lblChkbox"><input type="checkbox" name="active" value="1" checked>Activité disponible</label>
+                    <input type="hidden" name="action" value="adminRedirection" >
+                    <input type="hidden" name="step" value="addActivity" >
                     <input type="submit" value="Ajouter l'activité"></input>
                 </div>
             </div>
@@ -65,7 +69,7 @@
                     <th>Actif</th>
                     <th>ID</th>
                     <th>Modifier</th>
-                    <th>Activer/</br>Désactiver</th>
+                    <th>Désactiver</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,7 +77,7 @@
             </tbody>
         </table>
         <h2>Ajouter une situation</h2>
-        <form method="post" action="index.php?action=adminRedirection&step=addSituation">
+        <form method="POST" action="index.php">
             <div class="colDiv">
                 <div class="vDiv divAlignRight">
                     <label for="situationname">* Nom de la situation</label>
@@ -81,6 +85,8 @@
                 <div class="vDiv divAlignLeft">
                     <input type="text" name="situationname" required>
                     <label class="lblChkbox"><input type="checkbox" name="active" value="1" checked>Situation disponible</label>
+                    <input type="hidden" name="action" value="adminRedirection" >
+                    <input type="hidden" name="step" value="addSituation" >
                     <input type="submit" value="Ajouter la situation"></input>
                 </div>
             </div>

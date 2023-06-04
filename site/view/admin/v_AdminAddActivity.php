@@ -5,7 +5,9 @@
 
 <?php $ControllerAdminAddActivity = new AdminAddActivity ?>
 
+<main>
 <?php $ControllerAdminAddActivity->printAddActivityResult() ?>
+</main>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('view/layout.php') ?>
