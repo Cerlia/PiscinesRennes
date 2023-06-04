@@ -6,8 +6,8 @@
 <?php $ControllerChoixActivite = new ChoixActivite ?>
 
 <main>
-    <h1>Choisissez votre activité et votre situation</h1>
-    <form method="post" action="index.php">
+    <h1>Choix de l'activité et de la situation</h1>
+    <form method="POST" action="index.php"?action=achatRedirection&step=offer"">
         <div id="choixActivite">
             <fieldset>
                 <legend>Choisir une activité :</legend>
