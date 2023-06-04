@@ -2,7 +2,7 @@ body {
   margin: 0%;
   padding: 0%;
   background-color: #e0ecf2;
-  font-family: "Istok Web";
+  font-family: "Istok Web", "sans-serif";
 }
 
 /* Links */
@@ -176,6 +176,7 @@ nav ul {
 }
 
 /*CheckCodeSwimmingPool */
+
 .CheckCodeSwimmingPool {
   background-color: #ffffff;
   display: flex;
@@ -219,32 +220,6 @@ nav ul {
   color: #479cff;
   background-color: #ffffff;
 }
-
-/* CodeInformation  */
-/*
-
-.CodeInformation {
-  margin: 12vh 0px 0px 0px;
-}
-
-.CodeInformation .groupBox {
-  margin: 20px 0px 0px 10vw;
-}
-
-.CodeInformation .groupBox div {
-  display: flex;
-  flex-direction: column;
-  margin-left: 5vw;
-}
-
-.CodeInformation .groupBox li {
-  list-style: none;
-}
-
-.CodeInformation .blueLink {
-  padding: 20px 20px 20px 20px;
-}
-*/
 
 /* BookingPage */
 
@@ -328,6 +303,12 @@ footer a {
 
 .white-font {
   color: #ffffff;
+}
+
+.adminTableAction {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .adminIcon {

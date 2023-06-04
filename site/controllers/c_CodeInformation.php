@@ -14,7 +14,7 @@ class CodeInformation {
         $this->code =  $codePDO->read($idCode);
         $strMois = " +" . $this->code->getOffer()->getValidity() . " month";
         $dateValidite = $this->code->getGenerationDate();
-        $dateValidite = date('d/m/Y à 23:59', strtotime($strMois, strtotime($dateValidite)));
+        $this->dateValidite = date('d/m/Y à 23:59', strtotime($strMois, strtotime($dateValidite)));
     }
     
     function printCode(){
@@ -37,10 +37,12 @@ class CodeInformation {
     }
     function printBookingInformations(){
         if ($this->code->getOffer()->getActivity()->getBooking()) {
-            echo '<form  method="POST" action="index.php?action=codeRedirection&step=booking">
+            echo '<form  method="POST" action="index.php">
                   <input type="hidden" id="id_code" name="id_code" value=' . $this->code->getId_code() . ' /input>
                   <input type="hidden" id="id_activity" name="id_activity" value=' . $this->code->getOffer()->getActivity()->getIdActivity() . ' /input>
                   <input type="hidden" id="nb_entries" name="nb_entries" value=' . $this->code->getOffer()->getNbEntries() . ' /input>
+                  <input type="hidden" name="action" value="codeRedirection" /input>
+                  <input type="hidden" name="step" value="booking" /input>
                   <input class="blueLink" type=submit value="Gérer les réservations"/>
                   </form>';
         }

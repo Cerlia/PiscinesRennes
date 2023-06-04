@@ -5,12 +5,14 @@
 <?php  $ControllerCodeVerification = new CodeVerification ?>
 
 <main>
-    <form method="POST" action="index.php?action=codeRedirection&step=info">
+    <form method="POST" action="index.php">
         <div class="CheckCodeSwimmingPool">
             <article>
                     <h2>Saisissez votre code :</h2>
                     <?php $ControllerCodeVerification->printDefaultValue() ?>
             </article>
+            <input type="hidden" name="action" value="codeRedirection">
+            <input type="hidden" name="step" value="info">
             <button type="submit" >Valider</button>
         </div>
     </form>

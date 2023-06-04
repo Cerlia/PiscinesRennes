@@ -15,7 +15,7 @@ class AdminUpdateSituationAction
             $updatedSituation = new Situation($name, $active, $id_situation);
             $situationPDO = new SituationPDO();
             if ($situationPDO->update($updatedSituation)) {
-                echo "La situation a bien été modifiée.";
+                echo '<p>La situation a été modifiée</br><a href="index.php?action=adminRedirection&step=view">Retour</a></p>';
             } else {
                 echo "Une erreur est survenue lors de la modification de la situation.";
             }

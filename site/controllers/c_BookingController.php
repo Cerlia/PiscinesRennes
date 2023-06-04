@@ -6,9 +6,4 @@ class BookingController {
         $bookingPDO->create($id_lesson,$id_code);
     }
 }
-
-
-
-
-
 ?>
