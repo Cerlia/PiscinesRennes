@@ -17,10 +17,8 @@ if (isset($_GET['step'])) {
 if (empty($action)) {
 	$action = 'accueil';
 }
-echo '<script>console.log("'. $action .'") </script>';
 
 switch ($action) {
-
 		// Redirections action barre de nav
 	case 'accueil':
 		require('view/v_HomePage.php');
@@ -32,10 +30,6 @@ switch ($action) {
 
 	case 'verif':
 		require('view/v_CodeVerification.php');
-		break;
-
-	case 'admin';
-		gestion();
 		break;
 
 	case 'panier':
@@ -54,8 +48,13 @@ switch ($action) {
 	case 'panierRedirection';
 		$ControllerRedirection->panierRedirection();
 		break;
+
+	case 'adminRedirection';
+		$ControllerRedirection->adminRedirection();
+		break;
+
 	case 'bookingNewLesson';
-		
+
 	default:
 		require('view/v_HomePage.php');
 }
