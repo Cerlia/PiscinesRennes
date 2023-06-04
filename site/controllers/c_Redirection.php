@@ -103,9 +103,6 @@ class Redirection
     public function bookingRedirection()
     {
 
-    public function bookingRedirection()
-    {
-
         $bookingController = new BookingController();
 
         $step = 'view';
