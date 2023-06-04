@@ -3,6 +3,7 @@
 class PanierVue
 {
     private array $choices = [];
+    private array $choices = [];
     private float $totalPrice;
 
     function __construct()

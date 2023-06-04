@@ -1,13 +1,19 @@
-# piscines
-Projet web de BTS SIO 2e année
-Site Web pour les piscines de Rennes afin de gérer les abonnements des utilisateurs
+# Projet « piscines municipales de Rennes »
+Projet web de BTS SIO 2e année, présenté à l'examen. Réalisé en HTML, CSS, JavaScript et PHP, avec une base de données MySQL.
 
-Cahier des charges reçu par le professeur :
+# Fonctionnalités
+Résumé du cahier des charges :
+- site web permettant de générer des codes pour accéder aux piscines
+- les codes doivent pouvoir être achetés sans inscription préalable
+- le site pourra généré des codes pour différentes formules : leçon individuelle, abonnement solo, abonnement duo, etc.
+- le tarif, le nombre de places, la durée de validité des titres en vente pourront être définis en ligne par des administrateurs authentifiés
+- un formulaire permettra à n’importe qui de tester la validité d’un code et de voir son contenu actuel
 
-"Les piscines municipales de Rennes vont changer de logiciel afin de générer directement des codes permettant d'accéder aux bassins. Ces codes pourront être achetés via le site internet de la piscine, en ligne, sans aucune inscription. Nous ne traiterons pas les problématiques de paiement en ligne, mais ce processus devra être simulé.
+D'après ce cahier des charges ont été créés différentes pages permettant :
+-	d'ajouter une formule ou plusieurs formules à son panier, puis de simuler le processus de paiement pour obtenir son ou ses codes,
+-	d'entrer un code pour vérifier ses informations,
+-	de voir ses réservations en cours et d'en ajouter,
+-	de s'authentifier pour modifier les offres.
 
-Le site permettra de générer des codes pour obtenir une leçon individuelle de nage sur un des créneaux libres ou un abonnement solo 10 entrées valable 10 mois ou un abonnement duo valable pour dix fois deux entrées simultanées, pendant un an. Vous pourrez envisager d’autres formules également.
-
-En effet, le tarif, le nombre de places, la durée de validité des titres en vente pourront être définis en ligne par des administrateurs authentifiés. Vous chercherez à proposer une configuration la plus générique/modulable possible.
-
-Vous aurez également à définir un formulaire permettant à n’importe qui de tester la validité d’un code et de voir son contenu actuel."
+# Installation
+Le site nécessite une base de données MySQL dont le script de restauration db_restore_pools.sql se trouve dans le dépôt.
